@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Apply the default sans-serif font (Inter) */
+    font-family: theme('fontFamily.sans');
+    /* Smooth scrolling behavior */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Base body styles - background color is handled by App.tsx */
+    overflow-x: hidden;
+  }
+  
+  /* Keep basic scrollbar structure */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+     /* Use custom color scheme with explicit rgba values */
+     background-color: rgb(241 241 241 / 0.1);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+     /* Use custom color scheme with explicit rgba values */
+     background-color: rgb(241 241 241 / 0.3);
+     border-radius: 9999px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+     /* Use custom color scheme with explicit rgba values */
+     background-color: rgb(241 241 241 / 0.4);
+  }
+
+  /* Dark mode styles */
+  @media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+      background-color: rgb(17 24 39);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: rgb(55 65 81);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: rgb(227 59 227);
+    }
+  }
+}
+
+/* Remove the entire components layer as styles are now inline */
+/* @layer components { ... } */
+
+/* Keep keyframes as they use direct values */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgb(74 195 247), 0 0 20px rgb(227 59 227);
+  }
+  50% {
+    box-shadow: 0 0 15px rgb(74 195 247), 0 0 30px rgb(227 59 227);
+  }
+} 
