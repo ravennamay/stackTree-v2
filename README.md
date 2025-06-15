@@ -1,4 +1,4 @@
-# RatteCS Link Funnel
+# RatteCS Link Tree
 
 A central hub for RatteCS social media profiles, affiliate links, and discount codes. Built with React, TypeScript, and Tailwind CSS, optimized for SEO and affiliate revenue.
 
@@ -47,12 +47,14 @@ This project is configured for deployment on Cloudflare Pages. Follow these step
 ## SEO Optimization
 
 The site is optimized for:
+
 - Search engines
 - Coupon sites
 - Web scrapers
 - Affiliate aggregators
 
 Key SEO features:
+
 - Comprehensive meta tags
 - Structured data for products and coupons
 - XML sitemap
@@ -76,4 +78,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 RatteCS - [ratte@seweraim.com](mailto:ratte@seweraim.com)
 
-Project Link: [https://github.com/yourusername/ratte-website](https://github.com/yourusername/ratte-website) 
+Project Link: [https://github.com/yourusername/ratte-website](https://github.com/yourusername/ratte-website)

@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import LinkList from './components/LinkList';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
-import SocialIcons from './components/SocialIcons';
+import React, { useEffect } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import LinkList from "./components/LinkList";
+import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
+import SocialIcons from "./components/SocialIcons";
 
 /**
  * The main application component that structures the page with enhanced SEO.
@@ -11,31 +11,32 @@ import SocialIcons from './components/SocialIcons';
 const App: React.FC = () => {
   useEffect(() => {
     // Check if dark mode is preferred
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
 
     // Listen for changes in color scheme preference
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (e: MediaQueryListEvent) => {
       if (e.matches) {
-        document.documentElement.classList.add('dark');
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove("dark");
       }
     };
 
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   const siteData = {
-    title: 'RatteCS - CS2 Content Creator & Community Links',
-    description: 'Official links and affiliate codes for RatteCS. Find all social media profiles, CS2 settings, and exclusive discount codes in one place.',
-    url: 'https://ratte.seweraim.com/',
-    image: 'https://ratte.seweraim.com/og-image.jpg'
+    title: "RatteCS - CS2 Content Creator & Community Links",
+    description:
+      "Official links and affiliate codes for RatteCS. Find all social media profiles, CS2 settings, and exclusive discount codes in one place.",
+    url: "https://ratte.seweraim.com/",
+    image: "./assets/og-image.png",
   };
 
   return (
@@ -43,7 +44,11 @@ const App: React.FC = () => {
       <Helmet>
         {/* Font Optimization */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           rel="preload"
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
@@ -70,14 +75,17 @@ const App: React.FC = () => {
         <title>{siteData.title}</title>
         <meta name="title" content={siteData.title} />
         <meta name="description" content={siteData.description} />
-        <meta name="keywords" content="rattecs, cs2, counter-strike, gaming, streamer, content creator, affiliate codes, discount codes" />
+        <meta
+          name="keywords"
+          content="rattecs, cs2, counter-strike, gaming, streamer, content creator, affiliate codes, discount codes"
+        />
         <meta name="author" content="RatteCS" />
         <meta name="robots" content="index, follow" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <link rel="canonical" href={siteData.url} />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="./assets/favicon.png" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -98,38 +106,38 @@ const App: React.FC = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": siteData.title,
-            "description": siteData.description,
-            "url": siteData.url,
-            "image": siteData.image,
-            "author": {
+            name: siteData.title,
+            description: siteData.description,
+            url: siteData.url,
+            image: siteData.image,
+            author: {
               "@type": "Person",
-              "name": "Ratte",
-              "url": "https://rattecs.com"
+              name: "Ratte",
+              url: "https://rattecs.com",
             },
-            "publisher": {
+            publisher: {
               "@type": "Organization",
-              "name": "RatteCS",
-              "logo": {
+              name: "RatteCS",
+              logo: {
                 "@type": "ImageObject",
-                "url": "https://rattecs.com/logo.png"
-              }
+                url: "https://rattecs.com/logo.png",
+              },
             },
-            "offers": {
+            offers: {
               "@type": "AggregateOffer",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock",
-              "seller": {
+              priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
+              seller: {
                 "@type": "Organization",
-                "name": "RatteCS",
-                "url": "https://rattecs.com"
-              }
+                name: "RatteCS",
+                url: "https://rattecs.com",
+              },
             },
-            "aggregateRating": {
+            aggregateRating: {
               "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "1000"
-            }
+              ratingValue: "4.8",
+              reviewCount: "1000",
+            },
           })}
         </script>
 
@@ -138,64 +146,64 @@ const App: React.FC = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": [
+            mainEntity: [
               {
                 "@type": "Question",
-                "name": "What are affiliate links and how do they work?",
-                "acceptedAnswer": {
+                name: "What are affiliate links and how do they work?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "Affiliate links are special URLs that track when visitors make purchases. When you click an affiliate link and make a purchase, we may receive a small commission at no extra cost to you. This helps support our content creation."
-                }
+                  text: "Affiliate links are special URLs that track when visitors make purchases. When you click an affiliate link and make a purchase, we may receive a small commission at no extra cost to you. This helps support our content creation.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "How do I use the discount codes?",
-                "acceptedAnswer": {
+                name: "How do I use the discount codes?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "Simply click on the affiliate link, add items to your cart, and enter the provided discount code at checkout. The discount will be automatically applied to your order."
-                }
+                  text: "Simply click on the affiliate link, add items to your cart, and enter the provided discount code at checkout. The discount will be automatically applied to your order.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "Are the discount codes always valid?",
-                "acceptedAnswer": {
+                name: "Are the discount codes always valid?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "Most discount codes have a long validity period, but some may expire. We try to keep all codes up to date. If you encounter an expired code, please let us know."
-                }
+                  text: "Most discount codes have a long validity period, but some may expire. We try to keep all codes up to date. If you encounter an expired code, please let us know.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "Do I pay more when using affiliate links?",
-                "acceptedAnswer": {
+                name: "Do I pay more when using affiliate links?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "No, using our affiliate links does not increase the price you pay. In fact, you often get exclusive discounts not available elsewhere."
-                }
+                  text: "No, using our affiliate links does not increase the price you pay. In fact, you often get exclusive discounts not available elsewhere.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "How do I know if a link is an affiliate link?",
-                "acceptedAnswer": {
+                name: "How do I know if a link is an affiliate link?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "All affiliate links on our site are clearly marked with a 'Redirect' label and may include discount codes. We believe in transparency with our community."
-                }
+                  text: "All affiliate links on our site are clearly marked with a 'Redirect' label and may include discount codes. We believe in transparency with our community.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "What are the benefits of using your affiliate links?",
-                "acceptedAnswer": {
+                name: "What are the benefits of using your affiliate links?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "Using our affiliate links not only supports our content creation but also gives you access to exclusive discounts, verified deals, and special promotions that aren't available elsewhere."
-                }
+                  text: "Using our affiliate links not only supports our content creation but also gives you access to exclusive discounts, verified deals, and special promotions that aren't available elsewhere.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "How do I track my savings and rewards?",
-                "acceptedAnswer": {
+                name: "How do I track my savings and rewards?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "You can track your savings and rewards through our gamification system. Each purchase earns you points, and you can see your streak, rank, and next reward on the link cards."
-                }
-              }
-            ]
+                  text: "You can track your savings and rewards through our gamification system. Each purchase earns you points, and you can see your streak, rank, and next reward on the link cards.",
+                },
+              },
+            ],
           })}
         </script>
       </Helmet>
@@ -211,4 +219,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App; 
+export default App;
