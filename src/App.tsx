@@ -4,6 +4,7 @@ import LinkList from "./components/LinkList";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import SocialIcons from "./components/SocialIcons";
+import Favicon from "./assets/favicon.ico";
 
 /**
  * The main application component that structures the page with enhanced SEO.
@@ -32,7 +33,7 @@ const App: React.FC = () => {
   }, []);
 
   const siteData = {
-    title: "RatteCS - CS2 Content Creator & Community Links",
+    title: "ratte - links",
     description:
       "Official links and affiliate codes for RatteCS. Find all social media profiles, CS2 settings, and exclusive discount codes in one place.",
     url: "https://ratte.seweraim.com/",
@@ -85,7 +86,7 @@ const App: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <link rel="canonical" href={siteData.url} />
-        <link rel="icon" type="image/png" href="./assets/favicon.png" />
+        <link rel="icon" type="image/x-icon" href={Favicon} />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -113,14 +114,14 @@ const App: React.FC = () => {
             author: {
               "@type": "Person",
               name: "Ratte",
-              url: "https://rattecs.com",
+              url: "https://ratte.seweraim.com/",
             },
             publisher: {
               "@type": "Organization",
               name: "RatteCS",
               logo: {
                 "@type": "ImageObject",
-                url: "https://rattecs.com/logo.png",
+                url: "https://ratte.seweraim.com/logo.png",
               },
             },
             offers: {
@@ -130,7 +131,7 @@ const App: React.FC = () => {
               seller: {
                 "@type": "Organization",
                 name: "RatteCS",
-                url: "https://rattecs.com",
+                url: "https://ratte.seweraim.com/",
               },
             },
             aggregateRating: {

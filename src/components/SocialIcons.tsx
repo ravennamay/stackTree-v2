@@ -1,37 +1,37 @@
-import React from 'react';
-import { FaTwitch, FaDiscord, FaEnvelope } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import React from "react";
+import { FaTwitch, FaDiscord, FaEnvelope } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const SocialIcons: React.FC = () => {
   const socialLinks = [
     {
-      name: 'X (Twitter)',
+      name: "X (Twitter)",
       icon: FaXTwitter,
-      url: 'https://twitter.com/rattecs',
-      color: 'text-[#000000] dark:text-white',
-      size: 'w-[18px] h-[18px]'
+      url: "https://twitter.com/rattecs",
+      color: "text-[#000000] dark:text-white",
+      size: "w-[18px] h-[18px]",
     },
     {
-      name: 'Twitch',
+      name: "Twitch",
       icon: FaTwitch,
-      url: 'https://twitch.tv/rattecs',
-      color: 'text-[#9146FF]',
-      size: 'w-[18px] h-[18px]'
+      url: "https://twitch.tv/rattecs",
+      color: "text-[#9146FF]",
+      size: "w-[18px] h-[18px]",
     },
     {
-      name: 'Discord',
+      name: "Discord",
       icon: FaDiscord,
-      url: 'https://discord.gg/rattecs',
-      color: 'text-[#5865F2]',
-      size: 'w-[20px] h-[20px]'
+      url: "https://discord.com/invite/gc2epPGDKP",
+      color: "text-[#5865F2]",
+      size: "w-[20px] h-[20px]",
     },
     {
-      name: 'Email',
+      name: "Email",
       icon: FaEnvelope,
-      url: 'mailto:contact@rattecs.com',
-      color: 'text-gray-400',
-      size: 'w-[18px] h-[18px]'
-    }
+      url: "mailto:ratte@seweraim.com",
+      color: "text-gray-400",
+      size: "w-[18px] h-[18px]",
+    },
   ];
 
   return (
@@ -52,4 +52,4 @@ const SocialIcons: React.FC = () => {
   );
 };
 
-export default SocialIcons; 
+export default SocialIcons;

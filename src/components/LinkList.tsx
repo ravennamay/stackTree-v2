@@ -190,12 +190,7 @@ const LinkList: React.FC = () => {
             <SocialIcons />
           </div>
           <p className="text-base text-black/60 dark:text-white/60 leading-relaxed">
-            I'm a competitive gamer and content creator passionate about
-            esports, tech, and community building. My gaming brand has over 11K
-            followers and millions of views, blending content creation,
-            livestreaming, and hands-on projects in AI, design, and development.
-            I review gear, work at esports events, and contribute to advancing
-            the gaming industry.
+            All of my cool links, thank you for your support! :3
           </p>
         </div>
       </div>

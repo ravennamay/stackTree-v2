@@ -6,7 +6,7 @@ publish = "dist"
 NODE_VERSION = "18"
 
 [[redirects]]
-from = "https://rattecs.com/*"
+from = "https://ratte.seweraim.com/*"
 to = "https://ratte.seweraim.com/:splat"
 status = 301
 force = true

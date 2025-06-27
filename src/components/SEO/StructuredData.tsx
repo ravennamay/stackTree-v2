@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface StructuredDataProps {
   title: string;
@@ -11,28 +11,28 @@ export const StructuredData: React.FC<StructuredDataProps> = ({
   title,
   description,
   url,
-  image = 'https://rattecs.com/og-image.jpg'
+  image = "../../assets/og-image.png",
 }) => {
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
+    "@context": "https://schema.org",
+    "@type": "WebSite",
     name: title,
     description: description,
     url: url,
     image: image,
     author: {
-      '@type': 'Person',
-      name: 'Ratte',
-      url: 'https://rattecs.com'
+      "@type": "Person",
+      name: "Ratte",
+      url: "https://ratte.seweraim.com",
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'RatteCS',
+      "@type": "Organization",
+      name: "RatteCS",
       logo: {
-        '@type': 'ImageObject',
-        url: 'https://rattecs.com/logo.png'
-      }
-    }
+        "@type": "ImageObject",
+        url: "../../assets/pfp.png",
+      },
+    },
   };
 
   return (
@@ -41,4 +41,4 @@ export const StructuredData: React.FC<StructuredDataProps> = ({
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   );
-}; 
+};

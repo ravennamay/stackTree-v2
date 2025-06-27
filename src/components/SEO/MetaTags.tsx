@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface MetaTagsProps {
   title: string;
@@ -12,8 +12,8 @@ export const MetaTags: React.FC<MetaTagsProps> = ({
   title,
   description,
   url,
-  image = 'https://rattecs.com/og-image.jpg',
-  type = 'website'
+  image = "../../assets/og-image.png",
+  type = "website",
 }) => {
   return (
     <>
@@ -42,4 +42,4 @@ export const MetaTags: React.FC<MetaTagsProps> = ({
       <link rel="canonical" href={url} />
     </>
   );
-}; 
+};
