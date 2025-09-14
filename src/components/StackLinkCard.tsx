@@ -126,6 +126,7 @@ const StackLinkCard: React.FC<StackLinkCardProps> = ({
   isActive, 
   onActivate 
 }) => {
+  const { t } = useTranslation();
   const { 
     title, 
     url, 
