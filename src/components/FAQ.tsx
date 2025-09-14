@@ -1,6 +1,3 @@
-import React from "react";
-
-const FAQ: React.FC = () => {
 import React, { useState } from "react";
 
 const FAQ: React.FC = () => {
