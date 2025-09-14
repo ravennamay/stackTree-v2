@@ -252,12 +252,12 @@ const StackLinkCard: React.FC<StackLinkCardProps> = ({
         aria-label={`Visit ${title}${description ? ` - ${description}` : ''}`}
       >
         <div className={`
-          relative h-full w-full rounded-2xl border backdrop-blur-md transition-all duration-300
+          relative h-full w-full rounded-2xl border backdrop-blur-md transition-all duration-500 ${shadowIntensity} ${blurEffect}
           ${isActive 
-            ? 'bg-white/80 dark:bg-neutral-900/80 border-neutral-200 dark:border-neutral-700 shadow-2xl shadow-black/10 dark:shadow-black/30' 
-            : 'bg-white/60 dark:bg-neutral-800/60 border-neutral-300/50 dark:border-neutral-600/50 shadow-lg shadow-black/5 dark:shadow-black/20'
+            ? 'bg-white/90 dark:bg-neutral-900/90 border-neutral-200 dark:border-neutral-700' 
+            : 'bg-white/70 dark:bg-neutral-800/70 border-neutral-300/50 dark:border-neutral-600/50'
           }
-          ${isHovered && isActive ? 'shadow-3xl shadow-black/15 dark:shadow-black/40' : ''}
+          ${isHovered && isActive ? 'shadow-3xl shadow-black/25 dark:shadow-black/50 scale-[1.02]' : ''}
         `}>
           
           {/* Priority indicator */}
