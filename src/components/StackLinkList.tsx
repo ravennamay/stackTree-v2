@@ -233,7 +233,7 @@ const StackLinkList: React.FC = () => {
                 onClick={() => setActiveCardIndex((current) => 
                   (current + 1) % filteredLinks.length
                 )}
-                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group z-30"
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group z-50"
                 aria-label="Next card"
               >
                 <svg 
