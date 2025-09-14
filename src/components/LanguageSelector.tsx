@@ -1,16 +1,71 @@
 import React, { useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 
+// SVG Flag components
+const BrazilFlag = () => (
+  <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="15" fill="#009639"/>
+    <path d="M10 2L17 7.5L10 13L3 7.5L10 2Z" fill="#FFDF00"/>
+    <circle cx="10" cy="7.5" r="3" fill="#012169"/>
+  </svg>
+);
+
+const USFlag = () => (
+  <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="15" fill="#B22234"/>
+    <rect y="1" width="20" height="1" fill="white"/>
+    <rect y="3" width="20" height="1" fill="white"/>
+    <rect y="5" width="20" height="1" fill="white"/>
+    <rect y="7" width="20" height="1" fill="white"/>
+    <rect y="9" width="20" height="1" fill="white"/>
+    <rect y="11" width="20" height="1" fill="white"/>
+    <rect y="13" width="20" height="1" fill="white"/>
+    <rect width="8" height="8" fill="#3C3B6E"/>
+  </svg>
+);
+
+const SpainFlag = () => (
+  <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="15" fill="#AA151B"/>
+    <rect y="3.75" width="20" height="7.5" fill="#F1BF00"/>
+  </svg>
+);
+
+const FranceFlag = () => (
+  <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="6.67" height="15" fill="#002395"/>
+    <rect x="6.67" width="6.67" height="15" fill="white"/>
+    <rect x="13.33" width="6.67" height="15" fill="#ED2939"/>
+  </svg>
+);
+
+const GermanyFlag = () => (
+  <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="5" fill="#000"/>
+    <rect y="5" width="20" height="5" fill="#DD0000"/>
+    <rect y="10" width="20" height="5" fill="#FFCE00"/>
+  </svg>
+);
+
+const RussiaFlag = () => (
+  <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="5" fill="white"/>
+    <rect y="5" width="20" height="5" fill="#0039A6"/>
+    <rect y="10" width="20" height="5" fill="#D52B1E"/>
+  </svg>
+);
+
 const LanguageSelector: React.FC = () => {
   const { currentLanguage, changeLanguage, availableLanguages } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const languageLabels: Record<string, { flag: string; name: string }> = {
-    pt: { flag: '🇧🇷', name: 'Português' },
-    en: { flag: '🇺🇸', name: 'English' },
-    es: { flag: '🇪🇸', name: 'Español' },
-    fr: { flag: '🇫🇷', name: 'Français' },
-    de: { flag: '🇩🇪', name: 'Deutsch' }
+  const languageLabels: Record<string, { flag: React.ReactNode; name: string }> = {
+    pt: { flag: <BrazilFlag />, name: 'Português' },
+    en: { flag: <USFlag />, name: 'English' },
+    es: { flag: <SpainFlag />, name: 'Español' },
+    fr: { flag: <FranceFlag />, name: 'Français' },
+    de: { flag: <GermanyFlag />, name: 'Deutsch' },
+    ru: { flag: <RussiaFlag />, name: 'Русский' }
   };
 
   return (
