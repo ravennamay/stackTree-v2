@@ -74,6 +74,33 @@ const StackLinkList: React.FC = () => {
     setSelectedCategory(category);
   };
 
+  // Touch handlers for swipe navigation
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && filteredLinks.length > 1) {
+      setActiveCardIndex((current) => (current + 1) % filteredLinks.length);
+    }
+    if (isRightSwipe && filteredLinks.length > 1) {
+      setActiveCardIndex((current) => 
+        current === 0 ? filteredLinks.length - 1 : current - 1
+      );
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-neutral-900 dark:via-neutral-900 dark:to-black">
       <div className="max-w-lg mx-auto px-4 sm:px-6 py-8">
