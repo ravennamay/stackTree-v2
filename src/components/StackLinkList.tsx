@@ -4,6 +4,9 @@ import { LinkData } from "../types";
 import { allLinks } from "../data/links";
 import pfpImage from "../assets/pfp.png";
 import SocialIcons from "./SocialIcons";
+import ImportantLinks from "./ImportantLinks";
+import LanguageSelector from "./LanguageSelector";
+import { useTranslation } from "../hooks/useTranslation";
 
 /**
  * Stack-based link list with interactive depth effects
