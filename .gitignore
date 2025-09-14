@@ -54,4 +54,7 @@ Thumbs.db
 .yarn-integrity
 
 # Cloudflare
-.wrangler/ 
+.wrangler/ -e 
+# Environment files
+*.env
+*.env.*
