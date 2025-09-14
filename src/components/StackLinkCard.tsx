@@ -159,12 +159,18 @@ const StackLinkCard: React.FC<StackLinkCardProps> = ({
     }
   };
 
-  // Calculate stack position and rotation for depth effect
-  const stackOffset = isActive ? 0 : index * 2;
-  const rotation = isActive ? 0 : (index - total/2) * 0.5;
-  const scale = isActive ? 1 : 1 - (index * 0.02);
-  const zIndex = isActive ? 50 : total - index;
-  const opacity = isActive ? 1 : Math.max(0.7, 1 - (index * 0.1));
+  // Calculate stack position and rotation for enhanced depth effect
+  const stackOffset = isActive ? 0 : index * 3;
+  const rotation = isActive ? 0 : (index - total/2) * 0.8;
+  const scale = isActive ? 1 : Math.max(0.92, 1 - (index * 0.04));
+  const zIndex = isActive ? 50 : total - index + 10;
+  const opacity = isActive ? 1 : Math.max(0.6, 1 - (index * 0.15));
+  
+  // Enhanced shadow and blur effects based on stack position
+  const shadowIntensity = isActive ? 'shadow-2xl shadow-black/20 dark:shadow-black/40' : 
+                         index === 1 ? 'shadow-xl shadow-black/15 dark:shadow-black/30' :
+                         'shadow-lg shadow-black/10 dark:shadow-black/20';
+  const blurEffect = isActive ? '' : index > 2 ? 'backdrop-blur-sm' : '';
 
   // Generate enhanced schema.org JSON-LD
   const generateSchema = () => {
