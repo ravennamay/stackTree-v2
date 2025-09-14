@@ -12,6 +12,7 @@ import { useTranslation } from "../hooks/useTranslation";
  * Stack-based link list with interactive depth effects
  */
 const StackLinkList: React.FC = () => {
+  const { t } = useTranslation();
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [isMobile, setIsMobile] = useState(false);
