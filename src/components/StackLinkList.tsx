@@ -38,10 +38,10 @@ const StackLinkList: React.FC = () => {
     const categorySet = new Set(allLinks.map(link => link.category));
     const categories = Array.from(categorySet).sort();
 
-    // Filter links based on selected category
+    // Filter links based on selected category, excluding affiliate
     let filtered = selectedCategory === "all" 
-      ? allLinks 
-      : allLinks.filter(link => link.category === selectedCategory);
+      ? allLinks.filter(link => link.category !== "affiliate")
+      : allLinks.filter(link => link.category === selectedCategory && link.category !== "affiliate");
 
     // Sort by priority and click count
     filtered = filtered.sort((a, b) => {
