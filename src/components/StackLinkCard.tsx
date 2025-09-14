@@ -424,7 +424,7 @@ const StackLinkCard: React.FC<StackLinkCardProps> = ({
                         <button
                           onClick={(e) => handleCopyCode(couponCode, e)}
                           className="p-1.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-                          aria-label="Copy code"
+                          aria-label={t.copyCode}
                         >
                           {isCopied ? (
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor">
@@ -442,7 +442,7 @@ const StackLinkCard: React.FC<StackLinkCardProps> = ({
                     
                     <div className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700">
                       <span className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
-                        Visit
+                        {t.visit}
                       </span>
                     </div>
                   </div>
