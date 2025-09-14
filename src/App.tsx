@@ -3,6 +3,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import StackLinkList from "./components/StackLinkList";
 import Footer from "./components/Footer";
 import SocialIcons from "./components/SocialIcons";
+import FAQ from "./components/FAQ";
 import Favicon from "./assets/favicon.ico";
 
 /**
