@@ -54,16 +54,8 @@ const StackLinkList: React.FC = () => {
     return { filteredLinks: filtered, categories };
   }, [selectedCategory]);
 
-  // Auto-cycle through cards with pause on interaction
-  useEffect(() => {
-    if (filteredLinks.length <= 1) return;
-
-    const interval = setInterval(() => {
-      setActiveCardIndex((current) => (current + 1) % filteredLinks.length);
-    }, 5000); // Change card every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [filteredLinks.length, activeCardIndex]); // Re-run when activeCardIndex changes to reset timer
+  // Auto-cycle through cards REMOVED - user requested to stop auto-rotation
+  // No auto-cycle functionality
 
   // Reset active card when category changes
   useEffect(() => {
