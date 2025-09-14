@@ -259,12 +259,24 @@ const StackLinkList: React.FC = () => {
           </p>
         </div>
 
-        {/* Touch indicators for mobile */}
+        {/* Enhanced touch indicators for mobile */}
         {isMobile && filteredLinks.length > 1 && (
-          <div className="mt-6 text-center">
-            <p className="text-xs text-neutral-400 dark:text-neutral-500">
-              Tap cards to explore • Swipe to navigate
-            </p>
+          <div className="mt-6 flex items-center justify-center gap-4 text-center">
+            <div className="flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-neutral-800/50 rounded-full backdrop-blur-sm">
+              <svg className="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+              </svg>
+              <span className="text-xs text-neutral-500 dark:text-neutral-400">Swipe</span>
+              <svg className="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-neutral-800/50 rounded-full backdrop-blur-sm">
+              <svg className="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+              </svg>
+              <span className="text-xs text-neutral-500 dark:text-neutral-400">Tap</span>
+            </div>
           </div>
         )}
       </div>
