@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { LinkData } from '../types';
 import { FaXTwitter } from 'react-icons/fa6';
-import { FaSteam, FaDiscord, FaTwitch } from 'react-icons/fa';
+import { FaSteam, FaDiscord, FaTwitch, FaCode, FaPalette, FaBriefcase, FaCogs } from 'react-icons/fa';
 import AffiliateBadge from './AffiliateBadge';
 import GamificationBadge from './GamificationBadge';
+import { useTranslation } from '../hooks/useTranslation';
 
 // Import all images
 import gearzggIcon from '../assets/gearzgg.jpg';
