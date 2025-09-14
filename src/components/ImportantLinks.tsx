@@ -4,25 +4,25 @@ import { FaEnvelope, FaFileAlt, FaBriefcase } from 'react-icons/fa';
 const ImportantLinks: React.FC = () => {
   const importantLinks = [
     {
-      icon: <FaBriefcase className="w-5 h-5" />,
+      icon: <FaBriefcase className="w-4 h-4" />,
       label: "Portfolio",
       url: "https://github.com/ratte-cs", // Substituir pelo link real
-      color: "from-blue-500 to-purple-500",
-      hoverColor: "hover:from-blue-600 hover:to-purple-600"
+      color: "from-neutral-800 to-neutral-900",
+      hoverColor: "hover:from-neutral-700 hover:to-neutral-800"
     },
     {
-      icon: <FaEnvelope className="w-5 h-5" />,
+      icon: <FaEnvelope className="w-4 h-4" />,
       label: "Email",
       url: "mailto:ratte@seweraim.com",
-      color: "from-green-500 to-emerald-500", 
-      hoverColor: "hover:from-green-600 hover:to-emerald-600"
+      color: "from-neutral-700 to-neutral-800", 
+      hoverColor: "hover:from-neutral-600 hover:to-neutral-700"
     },
     {
-      icon: <FaFileAlt className="w-5 h-5" />,
+      icon: <FaFileAlt className="w-4 h-4" />,
       label: "CV",
       url: "#", // Substituir pelo link real do CV
-      color: "from-orange-500 to-red-500",
-      hoverColor: "hover:from-orange-600 hover:to-red-600"
+      color: "from-neutral-900 to-black",
+      hoverColor: "hover:from-neutral-800 hover:to-neutral-900"
     }
   ];
 
