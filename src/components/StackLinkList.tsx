@@ -131,19 +131,24 @@ const StackLinkList: React.FC = () => {
 
         {/* Stack Container */}
         <div className="relative">
-          {/* Progress indicator */}
-          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 flex gap-1">
+          {/* Enhanced progress indicator */}
+          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 flex gap-1.5">
             {filteredLinks.map((_, index) => (
               <button
                 key={index}
                 onClick={() => handleCardActivate(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                className={`h-2 rounded-full transition-all duration-500 ease-out relative overflow-hidden ${
                   index === activeCardIndex
-                    ? "bg-neutral-900 dark:bg-white w-6"
-                    : "bg-neutral-300 dark:bg-neutral-600 hover:bg-neutral-400 dark:hover:bg-neutral-500"
+                    ? "bg-neutral-900 dark:bg-white w-8 shadow-lg"
+                    : "bg-neutral-300 dark:bg-neutral-600 hover:bg-neutral-400 dark:hover:bg-neutral-500 w-2 hover:w-4"
                 }`}
                 aria-label={`Go to card ${index + 1}`}
-              />
+              >
+                {/* Animated progress fill for active indicator */}
+                {index === activeCardIndex && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full" />
+                )}
+              </button>
             ))}
           </div>
 
