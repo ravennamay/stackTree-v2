@@ -99,7 +99,7 @@ const StackLinkList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-neutral-900 dark:via-neutral-900 dark:to-black">
-      <div className="max-w-lg mx-auto px-4 sm:px-6 py-8">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8">
         
         {/* Language Selector */}
         <div className="absolute top-4 right-4 z-50">
