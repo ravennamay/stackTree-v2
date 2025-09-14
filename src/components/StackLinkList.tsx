@@ -142,124 +142,20 @@ const StackLinkList: React.FC = () => {
           </div>
         </div>
 
-        {/* Stack Container */}
-        <div className="relative">
-          {/* Enhanced progress indicator */}
-          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 flex gap-1.5">
-            {filteredLinks.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleCardActivate(index)}
-                className={`h-2 rounded-full transition-all duration-500 ease-out relative overflow-hidden ${
-                  index === activeCardIndex
-                    ? "bg-neutral-900 dark:bg-white w-8 shadow-lg"
-                    : "bg-neutral-300 dark:bg-neutral-600 hover:bg-neutral-400 dark:hover:bg-neutral-500 w-2 hover:w-4"
-                }`}
-                aria-label={`Go to card ${index + 1}`}
-              >
-                {/* Animated progress fill for active indicator */}
-                {index === activeCardIndex && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full" />
-                )}
-              </button>
-            ))}
-          </div>
-
-          {/* Card Stack with touch support */}
-          <div 
-            className="relative h-80 sm:h-96"
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
-            {filteredLinks.length === 0 ? (
-              <div className="flex items-center justify-center h-full text-neutral-500 dark:text-neutral-400">
-                <p>No links found in this category</p>
-              </div>
-            ) : (
-              filteredLinks.map((link, index) => (
-                <StackLinkCard
-                  key={link.id}
-                  link={link}
-                  index={Math.abs(index - activeCardIndex)}
-                  total={filteredLinks.length}
-                  isActive={index === activeCardIndex}
-                  onActivate={() => handleCardActivate(index)}
-                />
-              ))
-            )}
-          </div>
-
-          {/* Navigation arrows - enhanced with better positioning and effects */}
-          {filteredLinks.length > 1 && (
-            <>
-              <button
-                onClick={() => setActiveCardIndex((current) => 
-                  current === 0 ? filteredLinks.length - 1 : current - 1
-                )}
-                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group z-50"
-                aria-label="Previous card"
-              >
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors group-hover:-translate-x-0.5" 
-                  viewBox="0 0 20 20" 
-                  fill="currentColor"
-                >
-                  <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              </button>
-              
-              <button
-                onClick={() => setActiveCardIndex((current) => 
-                  (current + 1) % filteredLinks.length
-                )}
-                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group z-50"
-                aria-label="Next card"
-              >
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors group-hover:translate-x-0.5" 
-                  viewBox="0 0 20 20" 
-                  fill="currentColor"
-                >
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
-              </button>
-            </>
-          )}
+        {/* Links List */}
+        <div className="mb-8">
+          <LinkListVertical links={filteredLinks} />
         </div>
 
         {/* Category stats */}
-        <div className="mt-8 text-center">
+        <div className="text-center">
           <p className="text-sm text-neutral-500 dark:text-neutral-400">
             {filteredLinks.length} link{filteredLinks.length !== 1 ? 's' : ''} 
             {selectedCategory !== "all" && (
-              <span> in {selectedCategory}</span>
+              <span> in {t[selectedCategory as keyof typeof t] || selectedCategory}</span>
             )}
           </p>
         </div>
-
-        {/* Enhanced touch indicators for mobile */}
-        {isMobile && filteredLinks.length > 1 && (
-          <div className="mt-6 flex items-center justify-center gap-4 text-center">
-            <div className="flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-neutral-800/50 rounded-full backdrop-blur-sm">
-              <svg className="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-              </svg>
-              <span className="text-xs text-neutral-500 dark:text-neutral-400">Swipe</span>
-              <svg className="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-            <div className="flex items-center gap-2 px-3 py-2 bg-white/50 dark:bg-neutral-800/50 rounded-full backdrop-blur-sm">
-              <svg className="w-4 h-4 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-              </svg>
-              <span className="text-xs text-neutral-500 dark:text-neutral-400">Tap</span>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
