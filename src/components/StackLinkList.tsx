@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import StackLinkCard from "./StackLinkCard";
+import LinkListVertical from "./LinkListVertical";
 import { LinkData } from "../types";
 import { allLinks } from "../data/links";
 import pfpImage from "../assets/pfp.png";
