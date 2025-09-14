@@ -59,7 +59,7 @@ export interface Translation {
 
 export const translations: Record<string, Translation> = {
   pt: {
-    all: "Todos",
+    all: "Sobre",
     affiliate: "Afiliados",
     config: "Configurações", 
     social: "Social",
