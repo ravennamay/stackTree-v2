@@ -20,6 +20,22 @@ const StackLinkList: React.FC = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
+  // Get category icon
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'social':
+        return <FaUser className="w-4 h-4" />;
+      case 'config':
+        return <FaCog className="w-4 h-4" />;
+      case 'steam':
+        return <FaGamepad className="w-4 h-4" />;
+      case 'faq':
+        return <FaQuestionCircle className="w-4 h-4" />;
+      default:
+        return null;
+    }
+  };
+
   // Minimum swipe distance to trigger navigation
   const minSwipeDistance = 50;
 
