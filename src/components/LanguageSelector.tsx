@@ -75,7 +75,7 @@ const LanguageSelector: React.FC = () => {
         className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/50 dark:bg-neutral-800/50 backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50 hover:bg-white/70 dark:hover:bg-neutral-800/70 transition-all duration-200"
         aria-label="Select language"
       >
-        <span className="text-lg">
+        <span className="flex items-center justify-center w-5 h-5">
           {languageLabels[currentLanguage]?.flag || '🌐'}
         </span>
         <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
