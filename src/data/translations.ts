@@ -148,7 +148,7 @@ export const translations: Record<string, Translation> = {
   },
   
   en: {
-    all: "All",
+    all: "About",
     affiliate: "Affiliate", 
     config: "Config",
     social: "Social", 
