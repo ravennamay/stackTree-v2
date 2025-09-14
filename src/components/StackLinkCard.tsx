@@ -299,11 +299,11 @@ const StackLinkCard: React.FC<StackLinkCardProps> = ({
           
           <div className="relative p-6 h-full flex flex-col">
             {/* Header with icon and title */}
-            <div className="flex items-start gap-4 mb-3">
+            <div className="flex items-start gap-4 mb-4">
               <div className="flex-shrink-0">
                 {icon && iconMap[icon] ? (
                   <div className={`
-                    w-10 h-10 rounded-xl overflow-hidden border transition-all duration-300
+                    w-12 h-12 rounded-xl overflow-hidden border transition-all duration-300
                     ${isActive ? 'border-neutral-200 dark:border-neutral-700 shadow-md' : 'border-neutral-300/50 dark:border-neutral-600/50'}
                   `}>
                     <img 
@@ -314,7 +314,7 @@ const StackLinkCard: React.FC<StackLinkCardProps> = ({
                   </div>
                 ) : (
                   <div className={`
-                    w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300
+                    w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300
                     ${isActive ? 'bg-neutral-100 dark:bg-neutral-800' : 'bg-neutral-100/50 dark:bg-neutral-700/50'}
                   `}>
                     {Object.keys(defaultIcons).find(key => url.includes(key)) 
@@ -329,24 +329,24 @@ const StackLinkCard: React.FC<StackLinkCardProps> = ({
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0 flex-1">
                     <h3 className={`
-                      font-semibold transition-colors truncate
+                      font-semibold transition-colors leading-tight
                       ${isActive 
                         ? 'text-neutral-900 dark:text-white text-lg' 
                         : 'text-neutral-700 dark:text-neutral-300 text-base'
                       }
                     `}>
-                      {title}
+                      {t.linkTitles?.[link.id] || title}
                       {isVerified && (
-                        <span className="ml-2 inline-block" title="Verified Link">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-500 inline" viewBox="0 0 20 20" fill="currentColor">
+                        <span className="ml-2 inline-block" title={t.verified}>
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-500 inline" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                           </svg>
                         </span>
                       )}
                     </h3>
                     {description && isActive && (
-                      <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1 line-clamp-2">
-                        {description}
+                      <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">
+                        {t.linkDescriptions?.[link.id] || (category === 'services' ? t.serviceDescriptions?.[link.id.replace('service-', '').replace('1', 'portfolioDev').replace('2', 'portfolioDesign').replace('3', 'servicesDev').replace('4', 'servicesDesign')] : description)}
                       </p>
                     )}
                   </div>
