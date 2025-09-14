@@ -155,7 +155,7 @@ const StackLinkList: React.FC = () => {
                   : "bg-transparent text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700"
               }`}
             >
-              All
+              {t.all}
             </button>
             {categories.map((category) => (
               <button
@@ -167,7 +167,7 @@ const StackLinkList: React.FC = () => {
                     : "bg-transparent text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700"
                 }`}
               >
-                {category}
+                {t[category as keyof typeof t] || category}
               </button>
             ))}
           </div>
