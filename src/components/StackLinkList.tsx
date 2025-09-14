@@ -10,15 +10,12 @@ import { useTranslation } from "../hooks/useTranslation";
 import { FaUser, FaCog, FaGamepad, FaQuestionCircle } from "react-icons/fa";
 
 /**
- * Stack-based link list with interactive depth effects
+ * Vertical link list with modern category navigation
  */
 const StackLinkList: React.FC = () => {
   const { t } = useTranslation();
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [isMobile, setIsMobile] = useState(false);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   // Get category icon
   const getCategoryIcon = (category: string) => {
