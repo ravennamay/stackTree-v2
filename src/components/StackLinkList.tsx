@@ -184,8 +184,13 @@ const StackLinkList: React.FC = () => {
             ))}
           </div>
 
-          {/* Card Stack */}
-          <div className="relative h-80 sm:h-96">
+          {/* Card Stack with touch support */}
+          <div 
+            className="relative h-80 sm:h-96"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             {filteredLinks.length === 0 ? (
               <div className="flex items-center justify-center h-full text-neutral-500 dark:text-neutral-400">
                 <p>No links found in this category</p>
