@@ -108,7 +108,7 @@ const LanguageSelector: React.FC = () => {
                   : 'text-neutral-600 dark:text-neutral-300'
               }`}
             >
-              <span className="text-lg">{languageLabels[language].flag}</span>
+              <span className="flex items-center justify-center w-5 h-5">{languageLabels[language].flag}</span>
               <span className="text-sm font-medium">{languageLabels[language].name}</span>
             </button>
           ))}
