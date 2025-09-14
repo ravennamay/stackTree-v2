@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import StackLinkList from "./components/StackLinkList";
-import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import SocialIcons from "./components/SocialIcons";
 import Favicon from "./assets/favicon.ico";
