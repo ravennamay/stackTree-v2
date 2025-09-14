@@ -153,10 +153,10 @@ const StackLinkList: React.FC = () => {
 
         {/* Category Filter */}
         <div className="mb-8">
-          <div className="flex flex-wrap justify-center gap-2 p-3 bg-white/50 dark:bg-neutral-800/50 rounded-2xl backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50">
+          <div className="flex flex-wrap justify-center gap-3 p-4 bg-white/50 dark:bg-neutral-800/50 rounded-2xl backdrop-blur-sm border border-neutral-200/50 dark:border-neutral-700/50">
             <button
               onClick={() => handleCategoryChange("all")}
-              className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+              className={`flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                 selectedCategory === "all"
                   ? "bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 shadow-lg"
                   : "bg-transparent text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700"
@@ -168,13 +168,14 @@ const StackLinkList: React.FC = () => {
               <button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 capitalize ${
+                className={`flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-medium transition-all duration-200 capitalize ${
                   selectedCategory === category
                     ? "bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 shadow-lg"
                     : "bg-transparent text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-700"
                 }`}
               >
-                {t[category as keyof typeof t] || category}
+                {getCategoryIcon(category)}
+                <span>{t[category as keyof typeof t] || category}</span>
               </button>
             ))}
           </div>
