@@ -12,6 +12,11 @@ const StackLinkList: React.FC = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [isMobile, setIsMobile] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  // Minimum swipe distance to trigger navigation
+  const minSwipeDistance = 50;
 
   useEffect(() => {
     const checkMobile = () => {
