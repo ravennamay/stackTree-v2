@@ -103,6 +103,8 @@ export const faqLinks: LinkData[] = [
  * Enhanced with SEO metadata and analytics tracking.
  */
 export const allLinks: LinkData[] = [
+  // FAQ entries
+  ...faqLinks,
   // Services (New section)
   ...servicesLinks,
   // Social Media
