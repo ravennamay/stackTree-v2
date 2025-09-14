@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import LinkList from "./components/LinkList";
+import StackLinkList from "./components/StackLinkList";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import SocialIcons from "./components/SocialIcons";
 import Favicon from "./assets/favicon.ico";
 
 /**
- * The main application component that structures the page with enhanced SEO.
+ * The main application component with stack interactive design
  */
 const App: React.FC = () => {
   useEffect(() => {
@@ -185,7 +185,7 @@ const App: React.FC = () => {
                 name: "How do I know if a link is an affiliate link?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "All affiliate links on our site are clearly marked with a 'Redirect' label and may include discount codes. We believe in transparency with our community.",
+                  text: "All affiliate links on our site are clearly marked with a 'Visit' label and may include discount codes. We believe in transparency with our community.",
                 },
               },
               {
@@ -209,9 +209,9 @@ const App: React.FC = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-white dark:bg-background text-black dark:text-white transition-colors duration-300">
+      <div className="min-h-screen">
         <main>
-          <LinkList />
+          <StackLinkList />
           <FAQ />
         </main>
         <Footer />

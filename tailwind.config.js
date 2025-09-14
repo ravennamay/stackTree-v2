@@ -6,17 +6,35 @@ module.exports = {
     "./index.html" // Scan index.html if present
   ],
   theme: {
-    // Make sure we extend colors rather than replace them, to keep default slate, etc.
     extend: {
       colors: {
-        // Base colors
-        white: '#ffffff',
-        black: '#000000',
-        transparent: 'transparent',
-        current: 'currentColor',
+        // Neutral base colors for the new design
+        neutral: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+        },
         
-        // New color scheme
-        dark: '#0D0D0D',
+        // Accent colors - subtle but vibrant highlights
+        accent: {
+          blue: '#3b82f6',
+          purple: '#8b5cf6',
+          cyan: '#06b6d4',
+          emerald: '#10b981',
+          amber: '#f59e0b',
+          rose: '#ef4444',
+          indigo: '#6366f1',
+          orange: '#f97316',
+        },
+
+        // Keep some original colors for compatibility
         primary: {
           50: '#f0f9ff',
           100: '#e0f2fe',
@@ -29,43 +47,12 @@ module.exports = {
           800: '#075985',
           900: '#0c4a6e',
         },
-        secondary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-        },
-        accent: {
-          50: '#fdf4ff',
-          100: '#fae8ff',
-          200: '#f5d0fe',
-          300: '#f0abfc',
-          400: '#e879f9',
-          500: '#d946ef',
-          600: '#c026d3',
-          700: '#a21caf',
-          800: '#86198f',
-          900: '#701a75',
-        },
-        glow: '#4AC3F7',
-        steel: '#A3A3A3',
-        deep: '#1A1E50',
-        light: '#F1F1F1',
         
-        // Semantic color variants
-        background: '#0D0D0D',
-        text: '#F1F1F1',
-        highlight: '#5F4AB3',
-        'accent-pink': '#E33BE3',
-        'accent-blue': '#4AC3F7',
-        'accent-gray': '#A3A3A3',
-        'accent-deep': '#1A1E50',
+        // Semantic colors
+        background: '#0a0a0a',
+        glow: '#3b82f6',
+        
+        // Legacy colors for existing components
         ratteBlack: '#000000',
         ratteDarkGray: '#121212',
         ratteGray: '#2a2a2a',
@@ -91,7 +78,15 @@ module.exports = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       boxShadow: {
-        'neon': '0 0 5px #4AC3F7, 0 0 20px #E33BE3',
+        '3xl': '0 35px 60px -12px rgba(0, 0, 0, 0.25)',
+        'neon': '0 0 5px #3b82f6, 0 0 20px #8b5cf6',
+      },
+      animation: {
+        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-subtle': 'bounce 1s infinite',
+      },
+      backdropBlur: {
+        '3xl': '64px',
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
@@ -109,52 +104,31 @@ module.exports = {
         '9xl': ['8rem', { lineHeight: '1' }],
       },
       spacing: {
-        '0.5': '0.125rem',
-        '1': '0.25rem',
-        '1.5': '0.375rem',
-        '2': '0.5rem',
-        '2.5': '0.625rem',
-        '3': '0.75rem',
-        '3.5': '0.875rem',
-        '4': '1rem',
-        '5': '1.25rem',
-        '6': '1.5rem',
-        '7': '1.75rem',
-        '8': '2rem',
-        '9': '2.25rem',
-        '10': '2.5rem',
-        '11': '2.75rem',
-        '12': '3rem',
-        '14': '3.5rem',
-        '16': '4rem',
-        '20': '5rem',
-        '24': '6rem',
-        '28': '7rem',
-        '32': '8rem',
-        '36': '9rem',
-        '40': '10rem',
-        '44': '11rem',
-        '48': '12rem',
-        '52': '13rem',
-        '56': '14rem',
-        '60': '15rem',
-        '64': '16rem',
-        '72': '18rem',
-        '80': '20rem',
-        '96': '24rem',
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
       },
     },
   },
   plugins: [
-    // V4 plugin format is different
+    // V4 plugin format
     {
       handler({ addUtilities }) {
         addUtilities({
           '.text-shadow-neon': {
-            textShadow: '0 0 5px #4AC3F7, 0 0 10px #E33BE3',
+            textShadow: '0 0 5px #3b82f6, 0 0 10px #8b5cf6',
+          },
+          '.backdrop-blur-3xl': {
+            backdropFilter: 'blur(64px)',
+          },
+          '.line-clamp-2': {
+            overflow: 'hidden',
+            display: '-webkit-box',
+            '-webkit-box-orient': 'vertical',
+            '-webkit-line-clamp': '2',
           },
         });
       },
     },
   ],
-} 
+}
