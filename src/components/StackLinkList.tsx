@@ -167,19 +167,19 @@ const StackLinkList: React.FC = () => {
             )}
           </div>
 
-          {/* Navigation arrows */}
+          {/* Navigation arrows - enhanced with better positioning and effects */}
           {filteredLinks.length > 1 && (
             <>
               <button
                 onClick={() => setActiveCardIndex((current) => 
                   current === 0 ? filteredLinks.length - 1 : current - 1
                 )}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center group"
+                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group z-30"
                 aria-label="Previous card"
               >
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" 
+                  className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors group-hover:-translate-x-0.5" 
                   viewBox="0 0 20 20" 
                   fill="currentColor"
                 >
@@ -191,12 +191,12 @@ const StackLinkList: React.FC = () => {
                 onClick={() => setActiveCardIndex((current) => 
                   (current + 1) % filteredLinks.length
                 )}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-white/80 dark:bg-neutral-800/80 backdrop-blur-sm border border-neutral-200 dark:border-neutral-700 shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center group"
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md border border-neutral-200/50 dark:border-neutral-700/50 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center group z-30"
                 aria-label="Next card"
               >
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" 
+                  className="h-4 w-4 sm:h-5 sm:w-5 text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors group-hover:translate-x-0.5" 
                   viewBox="0 0 20 20" 
                   fill="currentColor"
                 >
