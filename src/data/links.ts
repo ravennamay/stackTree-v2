@@ -1,10 +1,13 @@
 import { LinkData } from "../types";
+import { servicesLinks } from "./services";
 
 /**
  * Array containing all the links and affiliate codes for the website.
  * Enhanced with SEO metadata and analytics tracking.
  */
 export const allLinks: LinkData[] = [
+  // Services (New section)
+  ...servicesLinks,
   // Social Media
   {
     id: "1",
