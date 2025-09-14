@@ -6,6 +6,7 @@ export interface Translation {
   social: string;
   steam: string;
   services: string;
+  faq: string;
   
   // Profile section
   profileDescription: string;
@@ -26,6 +27,7 @@ export interface Translation {
     config: string;  
     steam: string;
     services: string;
+    faq: string;
   };
   
   // Link descriptions (translatable)
@@ -44,6 +46,14 @@ export interface Translation {
     portfolioDesign: string;
     servicesDev: string;
     servicesDesign: string;
+  };
+  
+  // FAQ entries
+  faqEntries: {
+    [key: string]: {
+      question: string;
+      answer: string;
+    };
   };
 }
 
