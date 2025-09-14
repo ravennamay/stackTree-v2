@@ -66,4 +66,13 @@
   50% {
     box-shadow: 0 0 15px rgb(74 195 247), 0 0 30px rgb(227 59 227);
   }
+}
+
+/* 3D perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
 } 
