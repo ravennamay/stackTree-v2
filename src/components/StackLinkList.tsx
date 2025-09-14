@@ -34,8 +34,8 @@ const StackLinkList: React.FC = () => {
 
   // Organize and filter links
   const { filteredLinks, categories } = useMemo(() => {
-    // Get unique categories
-    const categorySet = new Set(allLinks.map(link => link.category));
+    // Get unique categories, excluding affiliate
+    const categorySet = new Set(allLinks.filter(link => link.category !== "affiliate").map(link => link.category));
     const categories = Array.from(categorySet).sort();
 
     // Filter links based on selected category, excluding affiliate
