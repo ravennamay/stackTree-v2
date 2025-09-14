@@ -7,6 +7,7 @@ import SocialIcons from "./SocialIcons";
 import ImportantLinks from "./ImportantLinks";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "../hooks/useTranslation";
+import { FaUser, FaCog, FaGamepad, FaQuestionCircle } from "react-icons/fa";
 
 /**
  * Stack-based link list with interactive depth effects
