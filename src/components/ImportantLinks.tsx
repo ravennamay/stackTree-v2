@@ -27,7 +27,7 @@ const ImportantLinks: React.FC = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center gap-3 mb-6">
+    <div className="flex items-center justify-center gap-2 mb-6">
       {importantLinks.map((link, index) => (
         <a
           key={index}
@@ -35,8 +35,8 @@ const ImportantLinks: React.FC = () => {
           target={link.url.startsWith('mailto:') ? '_self' : '_blank'}
           rel={link.url.startsWith('mailto:') ? '' : 'noopener noreferrer'}
           className={`
-            group relative w-12 h-12 rounded-full bg-gradient-to-br ${link.color} ${link.hoverColor}
-            shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300
+            group relative w-10 h-10 rounded-full bg-gradient-to-br ${link.color} ${link.hoverColor}
+            shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300
             flex items-center justify-center text-white
           `}
           aria-label={link.label}
@@ -47,11 +47,11 @@ const ImportantLinks: React.FC = () => {
           {/* Animated background glow on hover */}
           <div className={`
             absolute inset-0 rounded-full bg-gradient-to-br ${link.color} opacity-0 
-            group-hover:opacity-20 blur-xl scale-150 transition-all duration-300 -z-10
+            group-hover:opacity-15 blur-lg scale-125 transition-all duration-300 -z-10
           `} />
           
           {/* Tooltip */}
-          <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+          <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
             {link.label}
           </div>
         </a>
