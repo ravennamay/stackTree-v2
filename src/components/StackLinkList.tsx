@@ -71,44 +71,8 @@ const StackLinkList: React.FC = () => {
   // Auto-cycle through cards REMOVED - user requested to stop auto-rotation
   // No auto-cycle functionality
 
-  // Reset active card when category changes
-  useEffect(() => {
-    setActiveCardIndex(0);
-  }, [selectedCategory]);
-
-  const handleCardActivate = (index: number) => {
-    setActiveCardIndex(index);
-  };
-
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
-  };
-
-  // Touch handlers for swipe navigation
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe && filteredLinks.length > 1) {
-      setActiveCardIndex((current) => (current + 1) % filteredLinks.length);
-    }
-    if (isRightSwipe && filteredLinks.length > 1) {
-      setActiveCardIndex((current) => 
-        current === 0 ? filteredLinks.length - 1 : current - 1
-      );
-    }
   };
 
   return (
