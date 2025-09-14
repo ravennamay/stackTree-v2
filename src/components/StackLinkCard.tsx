@@ -26,6 +26,11 @@ const iconMap: Record<string, string> = {
   gamerbulk: gamerbulkIcon,
   skinvault: skinvaultIcon,
   pfp: pfpIcon,
+  // For services, we'll use default icons since we don't have specific images
+  portfolio: '',
+  design: '',
+  'services-dev': '',
+  'services-design': ''
 };
 
 // Default icons for different types of links
