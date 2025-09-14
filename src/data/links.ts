@@ -2,6 +2,103 @@ import { LinkData } from "../types";
 import { servicesLinks } from "./services";
 
 /**
+ * FAQ data entries
+ */
+export const faqLinks: LinkData[] = [
+  {
+    id: "faq-who-am-i",
+    title: "Who am I?",
+    url: "#",
+    icon: "faq",
+    category: "faq",
+    description: "Learn about Ratte",
+    priority: 10,
+    lastUpdated: "2024-04-15",
+    isVerified: false,
+    analyticsId: "faq-who-am-i",
+    schemaType: "WebPage",
+  },
+  {
+    id: "faq-what-can-find",
+    title: "What can you find here?",
+    url: "#",
+    icon: "faq",
+    category: "faq",
+    description: "Website content overview",
+    priority: 9,
+    lastUpdated: "2024-04-15",
+    isVerified: false,
+    analyticsId: "faq-what-can-find",
+    schemaType: "WebPage",
+  },
+  {
+    id: "faq-how-support",
+    title: "How to support me?",
+    url: "#",
+    icon: "faq",
+    category: "faq",
+    description: "Ways to show support",
+    priority: 8,
+    lastUpdated: "2024-04-15",
+    isVerified: false,
+    analyticsId: "faq-how-support",
+    schemaType: "WebPage",
+  },
+  {
+    id: "faq-where-connect",
+    title: "Where to connect?",
+    url: "#",
+    icon: "faq",
+    category: "faq",
+    description: "Social media presence",
+    priority: 7,
+    lastUpdated: "2024-04-15",
+    isVerified: false,
+    analyticsId: "faq-where-connect",
+    schemaType: "WebPage",
+  },
+  {
+    id: "faq-gaming-gear",
+    title: "Gaming gear recommendations?",
+    url: "#",
+    icon: "faq",
+    category: "faq",
+    description: "Recommended gaming equipment",
+    priority: 6,
+    lastUpdated: "2024-04-15",
+    isVerified: false,
+    analyticsId: "faq-gaming-gear",
+    schemaType: "WebPage",
+  },
+  {
+    id: "faq-discount-codes",
+    title: "How to use discount codes?",
+    url: "#",
+    icon: "faq",
+    category: "faq",
+    description: "Guide to using discount codes",
+    priority: 5,
+    lastUpdated: "2024-04-15",
+    isVerified: false,
+    analyticsId: "faq-discount-codes",
+    schemaType: "WebPage",
+  },
+  {
+    id: "faq-contact-directly",
+    title: "Contact directly?",
+    url: "#",
+    icon: "faq",
+    category: "faq",
+    description: "Direct contact information",
+    priority: 4,
+    lastUpdated: "2024-04-15",
+    isVerified: false,
+    analyticsId: "faq-contact-directly",
+    schemaType: "WebPage",
+  }
+];
+
+/**
  * Array containing all the links and affiliate codes for the website.
  * Enhanced with SEO metadata and analytics tracking.
  */
