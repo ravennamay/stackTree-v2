@@ -101,6 +101,11 @@ const StackLinkList: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-white via-neutral-50 to-neutral-100 dark:from-neutral-900 dark:via-neutral-900 dark:to-black">
       <div className="max-w-lg mx-auto px-4 sm:px-6 py-8">
         
+        {/* Language Selector */}
+        <div className="absolute top-4 right-4 z-50">
+          <LanguageSelector />
+        </div>
+        
         {/* Profile Section */}
         <div className="mb-12 flex flex-col items-center text-center">
           <div className="relative w-28 h-28 mb-6">
@@ -116,14 +121,25 @@ const StackLinkList: React.FC = () => {
           </div>
 
           <div className="max-w-sm flex flex-col items-center">
-            <h1 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+            <h1 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4 flex items-center gap-2">
               ratte
+              {/* Yellow verified checkmark */}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-6 w-6 text-yellow-500" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+                title="Verified"
+              >
+                <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
             </h1>
-            <div className="mb-6">
-              <SocialIcons />
-            </div>
+            
+            {/* Important Links replacing Social Icons */}
+            <ImportantLinks />
+            
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-lg">
-              All of my cool links, thank you for your support! :3
+              {t.profileDescription}
             </p>
           </div>
         </div>
