@@ -40,10 +40,7 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-      <h2 className="text-2xl font-bold text-black dark:text-white mb-8">
-        Frequently Asked Questions
-      </h2>
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
       <div className="space-y-6">
         {faqs.map((faq, index) => (
           <div
